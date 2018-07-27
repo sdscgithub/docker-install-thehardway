@@ -9,17 +9,21 @@ $ bash ./check-config.sh
 
 ## get tools
 
-### Epel
+
+
+## docker 
+
+
+### If you have access to internet
+
+#### Epel
 
 ```
 sudo yum localinstall --nogpgcheck http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
 
 ```
 
-## docker 
-
-
-### If you have access to internet
+#### get Docker binary
 
 ```
 mkdir Downloads
@@ -32,11 +36,15 @@ mv ~/docker-17.12.1-ce.tgz  .
 
 ```
 
-### If no internet - find ways to get this package in
+### If no internet - get this package in archives
 
 ```
-tar xvzf docker-17.12.1-ce.tgz
+tar xvzf archive/docker-17.12.1-ce.tgz
 sudo cp docker/* /usr/bin
+
+```
+#### Test drive it
+```
 sudo dockerd &
 docker -v
 sudo groupadd docker
@@ -45,7 +53,6 @@ cd /var/run
 
 ls -l
 sudo chown root:docker docker.sock
-
 ```
 
 ## install ansible
@@ -68,7 +75,6 @@ mkdir $HOME/go
 export GOPATH=$HOME/go
 echo $GOPATH
 echo "export GOPATH=$HOME/go" >> ~/.bashrc
-
 
 ```
 
